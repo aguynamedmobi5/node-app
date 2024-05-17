@@ -24,7 +24,7 @@ jobs:
 
       - name: Build, tag, and push Docker image to ECR
         env:
-          ECR_REGISTRY: public.ecr.aws/q0g9f9q2
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           ECR_REPOSITORY: hello-world-app
           IMAGE_TAG: latest
         run: |
